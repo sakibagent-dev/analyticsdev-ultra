@@ -8,6 +8,18 @@
   <em>Created by Analytics Dev Founder Sakib Hossain</em>
 </p>
 
+<p align="center">
+  <a href="https://github.com/sakibagent-dev/analyticsdev-ultra/releases/download/v1.0.0/AnalyticsDev-Ultra-v1.0.0.zip">
+    <img src="https://img.shields.io/badge/Download_Extension-v1.0.0_(ZIP)-059669?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download Extension" />
+  </a>
+  <a href="https://github.com/sakibagent-dev/analyticsdev-ultra/releases/latest">
+    <img src="https://img.shields.io/badge/GitHub-Releases-1e293b?style=for-the-badge&logo=github" alt="Releases" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+  </a>
+</p>
+
 ---
 
 ## 🎯 Executive Overview
@@ -40,34 +52,54 @@ AnalyticsDev Ultra enforces a strict distinction between observable browser evid
 
 ---
 
-## 🚀 Quick Start: Loading in Google Chrome
+## 🚀 How to Install & Use Publicly
 
-### Prerequisites
-- Google Chrome (Version 111+ recommended for Manifest V3 MAIN world support)
-- Node.js v18+ and npm installed
+### 📥 Option 1: 1-Click Install for Everyone (No Coding / Node.js Required)
 
-### 1. Build the Extension
+Anyone can install and use this extension in 30 seconds:
+
+1. **Download:** Click to download the pre-built **[AnalyticsDev-Ultra-v1.0.0.zip](https://github.com/sakibagent-dev/analyticsdev-ultra/releases/download/v1.0.0/AnalyticsDev-Ultra-v1.0.0.zip)**.
+2. **Extract:** Unzip/Extract the `.zip` archive on your computer into a folder.
+3. **Open Extensions in Chrome:** Navigate to `chrome://extensions/` in Google Chrome (or go to Menu &rarr; Extensions &rarr; Manage Extensions).
+4. **Enable Developer Mode:** Turn **ON** the **Developer mode** toggle switch in the top-right corner.
+5. **Load Extension:** Click the **Load unpacked** button in the top-left corner and select the extracted folder.
+6. **Start Auditing:** Pin **AnalyticsDev Ultra** to your Chrome toolbar. Open any website and click the icon to run a full audit!
+
+---
+
+### 💻 Option 2: For Developers (Build from Source)
+
 ```bash
+# Clone the repository
+git clone https://github.com/sakibagent-dev/analyticsdev-ultra.git
+cd analyticsdev-ultra
+
 # Install dependencies
 npm install
 
-# Run Vitest test suite
+# Run automated Vitest test suite
 npm run test
 
 # Compile production bundle
 npm run build
 ```
 
-### 2. Load into Chrome
-1. Open Google Chrome and navigate to: `chrome://extensions/`
-2. Enable **Developer mode** toggle in the top-right corner.
-3. Click the **Load unpacked** button in the top-left corner.
-4. Select the `dist/` directory inside this project:
-   ```
-   d:\Analytics Dev\Chrome Extention\AnalyticsDev Ultra\dist
-   ```
-5. The **AnalyticsDev Ultra** shield icon will appear in your Chrome toolbar!
-6. Click the extension icon on any website to open the Popup audit widget or click **Dashboard** to launch the full-screen audit suite.
+Then in Chrome (`chrome://extensions/`), click **Load unpacked** and select the `dist/` directory.
+
+---
+
+### 🏪 Option 3: Publishing to Chrome Web Store
+
+To make this extension available for 1-click installation directly from the Google Chrome Web Store for millions of public users:
+
+1. Visit the [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole/).
+2. Click **New Item** &rarr; Upload `AnalyticsDev-Ultra-v1.0.0.zip`.
+3. Fill in store details:
+   - **Name:** AnalyticsDev Ultra
+   - **Summary:** Enterprise Website Tracking, GTM, Meta CAPI, GA4 & Conversion Audit Platform
+   - **Category:** Developer Tools / Productivity
+   - **Developer:** Sakib Hossain (Analytics Dev)
+4. Submit for review! Once approved, anyone in the world can install it with a single "Add to Chrome" button from the Chrome Web Store.
 
 ---
 
