@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "AnalyticsDev Ultra — Website Tracking & Conversion Audit",
+  "short_name": "AnalyticsDev Ultra",
+  "version": "1.0.0",
+  "description": "Professional Website Tracking, Analytics, Advertising & Conversion Audit Platform.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "cookies",
+    "webRequest",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["runtime-injected.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "AnalyticsDev Ultra",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["runtime-injected.js", "dashboard.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

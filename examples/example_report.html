@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Tracking & Conversion Audit — example-ecommerce-store.com</title>
+  <style>
+    :root {
+      --primary: #059669;
+      --navy: #0f172a;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: #334155; margin: 0; padding: 40px 20px; line-height: 1.5; }
+    .container { max-width: 1000px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 40px; }
+    header { border-bottom: 2px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-start; }
+    h1 { color: var(--navy); font-size: 26px; margin: 0 0 6px 0; }
+    .consultant-meta { color: #64748b; font-size: 13px; text-align: right; }
+    .score-badge { background: #f0fdf4; border: 2px solid var(--primary); color: var(--primary); padding: 12px 24px; border-radius: 10px; text-align: center; font-size: 32px; font-weight: 800; }
+    .score-grade { font-size: 13px; font-weight: 600; text-transform: uppercase; color: #475569; }
+    .section-title { font-size: 18px; color: var(--navy); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 32px 0 16px 0; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+    th { background: #f1f5f9; text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: #1e293b; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .badge-critical { background: #fee2e2; color: #991b1b; }
+    .badge-high { background: #ffedd5; color: #9a3412; }
+    .badge-medium { background: #fef3c7; color: #92400e; }
+    .badge-low { background: #e0f2fe; color: #075985; }
+    .badge-status-verified { background: #dcfce7; color: #166534; }
+    .badge-status-detected { background: #dbeafe; color: #1e40af; }
+    .badge-status-possible { background: #fef3c7; color: #92400e; }
+    .badge-status-requires_access { background: #ede9fe; color: #5b21b6; }
+    .badge-status-not_detected { background: #f1f5f9; color: #64748b; }
+    .issue-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; background: #fafafa; }
+    .issue-card.severity-critical { border-left: 5px solid #ef4444; }
+    .issue-card.severity-high { border-left: 5px solid #f97316; }
+    .issue-card.severity-medium { border-left: 5px solid #f59e0b; }
+    .issue-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .issue-header h3 { margin: 0; font-size: 15px; color: var(--navy); }
+    .issue-grid { display: grid; gap: 8px; font-size: 13px; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: #94a3b8; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Website Tracking & Conversion Audit</h1>
+        <p style="margin: 0; color: #64748b;">Target: <strong>example-ecommerce-store.com</strong> &bull; Date: October 5, 2026, 09:30 PM</p>
+      </div>
+      <div class="consultant-meta">
+        <strong>Sakib Hossain</strong><br>
+        Digital Analytics & Conversion Tracking Specialist<br>
+        sakib@trackauditpro.com &bull; +1 (555) 019-2834
+      </div>
+    </header>
+
+    <div style="display: flex; gap: 30px; align-items: center; margin-bottom: 24px;">
+      <div class="score-badge">
+        82<span style="font-size: 18px; color: #94a3b8;">/100</span>
+        <div class="score-grade">GRADE A</div>
+      </div>
+      <div style="flex: 1; font-size: 14px; color: #475569;">
+        <p>An automated technical tracking audit was conducted on example-ecommerce-store.com on October 5, 2026. The website achieved an overall Tracking Health Score of 82/100 (Grade A). A total of 4 tracking platform(s) and 4 tracked event action(s) were observed. The audit identified 0 critical issue(s) and 1 high-priority optimization opportunity(ies) impacting attribution reliability, deduplication, and privacy compliance.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Platform Audit & Implementation Status</h2>
+    <table>
+      <thead>
+        <tr><th>Platform</th><th>Component</th><th>Status</th><th>Confidence</th><th>Identifiers</th><th>Events</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Meta</strong></td>
+          <td>Meta Pixel</td>
+          <td><span class="badge badge-status-verified">VERIFIED</span></td>
+          <td>95%</td>
+          <td><code>104928172938471</code></td>
+          <td>PageView, ViewContent, AddToCart, Purchase</td>
+        </tr>
+        <tr>
+          <td><strong>Meta</strong></td>
+          <td>Conversions API (CAPI)</td>
+          <td><span class="badge badge-status-possible">POSSIBLE</span></td>
+          <td>55%</td>
+          <td><code>None</code></td>
+          <td>Purchase</td>
+        </tr>
+        <tr>
+          <td><strong>Google Analytics</strong></td>
+          <td>GA4 (Google Analytics 4)</td>
+          <td><span class="badge badge-status-verified">VERIFIED</span></td>
+          <td>95%</td>
+          <td><code>G-98XYZ12345</code></td>
+          <td>page_view, view_item, add_to_cart, purchase</td>
+        </tr>
+        <tr>
+          <td><strong>Google Tag Manager</strong></td>
+          <td>GTM Web Container</td>
+          <td><span class="badge badge-status-verified">VERIFIED</span></td>
+          <td>98%</td>
+          <td><code>GTM-PROD889</code></td>
+          <td>None</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Universal Conversion & Event Audit</h2>
+    <table>
+      <thead>
+        <tr><th>Event</th><th>Platform</th><th>Browser</th><th>Server Signal</th><th>Event ID</th><th>Transaction ID</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Purchase</strong></td>
+          <td>Meta Pixel</td>
+          <td>✓</td>
+          <td>—</td>
+          <td>order_10492_evt</td>
+          <td>—</td>
+          <td><span class="badge badge-status-detected">DETECTED</span></td>
+        </tr>
+        <tr>
+          <td><strong>purchase</strong></td>
+          <td>Google Analytics 4</td>
+          <td>✓</td>
+          <td>—</td>
+          <td>—</td>
+          <td>ORD_10492</td>
+          <td><span class="badge badge-status-verified">VERIFIED</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Audit Findings & Strategic Recommendations</h2>
+    <div class="issue-card severity-high">
+      <div class="issue-header">
+        <span class="badge badge-high">HIGH</span>
+        <h3>Upgrade to Google Consent Mode v2 Required</h3>
+      </div>
+      <div class="issue-grid">
+        <div><strong>Finding:</strong> Legacy Google Consent Mode is active, but lacks required v2 parameters (ad_user_data, ad_personalization).</div>
+        <div><strong>Business Impact:</strong> Google Ads remarketing, audience building, and conversion modeling for EEA/EU users will be significantly degraded without Consent Mode v2.</div>
+        <div><strong>Recommendation:</strong> Configure your CMP (OneTrust) to trigger Google Consent Mode v2 with default consent states before Google tags load.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Server-Side Tracking Architecture</h2>
+    <p style="font-size: 13px; color: #475569;">Browser-level scanning cannot fully verify private server/container configurations. Verifying server-side delivery requires authorized access to GTM Server Container, Stape, or Ad Platform Events Manager.</p>
+    <p style="font-size: 13px; color: #64748b;"><strong>Required Container Access:</strong> GTM Server Container access; Cloud hosting / Stape platform access; Ad platform Events Manager access.</p>
+
+    <footer>
+      Confidential Tracking & Conversion Audit • Generated by TrackAudit Pro
+    </footer>
+  </div>
+</body>
+</html>

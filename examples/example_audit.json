@@ -1,0 +1,285 @@
+{
+  "id": "audit_example_ecommerce_store_com_1710000000000",
+  "website": "example-ecommerce-store.com",
+  "url": "https://example-ecommerce-store.com/checkout/order-received/10492?fbclid=IwAR0sample_click_id&utm_source=meta&utm_medium=cpc",
+  "auditDate": "October 5, 2026, 09:30 PM",
+  "timestamp": 1710000000000,
+  "score": {
+    "total": 82,
+    "grade": "A",
+    "categories": {
+      "platformCoverage": {
+        "score": 15,
+        "max": 15,
+        "explanation": "Detected active platform components (Analytics: Yes, Tag Manager: Yes, Ad Pixels: Yes)."
+      },
+      "conversionTracking": {
+        "score": 16,
+        "max": 20,
+        "explanation": "Conversion audit: Purchase event (✓), Lead/Conversion (✓), Transaction ID (✓), Revenue/Currency (✓)."
+      },
+      "eventTracking": {
+        "score": 20,
+        "max": 20,
+        "explanation": "Observed 6 unique standard/custom event actions across platforms."
+      },
+      "serverSideTracking": {
+        "score": 10,
+        "max": 15,
+        "explanation": "Server-side signals: Status is \"possible\". Browser event_id deduplication observed."
+      },
+      "dataLayer": {
+        "score": 10,
+        "max": 10,
+        "explanation": "window.dataLayer active with 12 pushes. Ecommerce schema: Detected."
+      },
+      "consent": {
+        "score": 5,
+        "max": 10,
+        "explanation": "CMP Detected: OneTrust. Google Consent Mode: v1 (Legacy)."
+      },
+      "implementationQuality": {
+        "score": 6,
+        "max": 10,
+        "explanation": "Evaluated duplicate tracking paths and script conflicts. 1 duplicate risk warning(s) found."
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "meta_pixel",
+      "platform": "Meta",
+      "component": "Meta Pixel",
+      "category": "ad_platform",
+      "status": "verified",
+      "confidence": 95,
+      "confidenceLevel": "high",
+      "identifiers": ["104928172938471"],
+      "events": ["PageView", "ViewContent", "AddToCart", "Purchase"],
+      "evidence": [
+        {
+          "id": "meta_js_1",
+          "type": "javascript",
+          "description": "Meta Pixel JavaScript library (fbevents.js) detected in DOM scripts.",
+          "source": "DOM Script Tag",
+          "confidence": 0.95
+        },
+        {
+          "id": "meta_id_1",
+          "type": "javascript",
+          "description": "Meta Pixel ID detected: 104928172938471",
+          "source": "fbq('init')",
+          "value": "104928172938471",
+          "confidence": 0.98
+        }
+      ],
+      "warnings": [],
+      "notes": ["Meta attribution signal detected via fbclid. (Note: does not verify active ad campaign delivery)."]
+    },
+    {
+      "id": "meta_capi",
+      "platform": "Meta",
+      "component": "Conversions API (CAPI)",
+      "category": "ad_platform",
+      "status": "possible",
+      "confidence": 55,
+      "confidenceLevel": "medium",
+      "identifiers": [],
+      "events": ["Purchase"],
+      "evidence": [
+        {
+          "id": "capi_eid_1",
+          "type": "javascript",
+          "description": "event_id parameter observed in browser event payload (mandatory for Meta CAPI deduplication).",
+          "source": "Event Payload",
+          "value": "Sample ID: order_10492_evt",
+          "confidence": 0.9
+        }
+      ],
+      "warnings": [
+        "Browser-level scanning cannot confirm private server-to-server delivery to Meta servers."
+      ],
+      "notes": [
+        "event_id deduplication signal detected in browser events. Full server-side CAPI pipeline requires account verification."
+      ]
+    },
+    {
+      "id": "google_analytics_4",
+      "platform": "Google Analytics",
+      "component": "GA4 (Google Analytics 4)",
+      "category": "analytics",
+      "status": "verified",
+      "confidence": 95,
+      "confidenceLevel": "high",
+      "identifiers": ["G-98XYZ12345"],
+      "events": ["page_view", "view_item", "add_to_cart", "purchase"],
+      "evidence": [
+        {
+          "id": "ga4_id_1",
+          "type": "javascript",
+          "description": "GA4 Measurement ID detected in scripts: G-98XYZ12345",
+          "source": "gtag('config')",
+          "value": "G-98XYZ12345",
+          "confidence": 0.95
+        }
+      ],
+      "warnings": [],
+      "notes": []
+    },
+    {
+      "id": "google_tag_manager",
+      "platform": "Google Tag Manager",
+      "component": "GTM Web Container",
+      "category": "tag_manager",
+      "status": "verified",
+      "confidence": 98,
+      "confidenceLevel": "high",
+      "identifiers": ["GTM-PROD889"],
+      "events": [],
+      "evidence": [
+        {
+          "id": "gtm_id_1",
+          "type": "javascript",
+          "description": "GTM Container ID detected: GTM-PROD889",
+          "source": "gtm.js script URL",
+          "value": "GTM-PROD889",
+          "confidence": 0.98
+        }
+      ],
+      "warnings": [],
+      "notes": ["Connected to dataLayer with 12 pushes."]
+    }
+  ],
+  "events": [
+    {
+      "event": "Purchase",
+      "platform": "Meta Pixel",
+      "browser": true,
+      "serverSignal": false,
+      "eventId": "order_10492_evt",
+      "value": 149.99,
+      "currency": "USD",
+      "evidenceSummary": "Detected via Meta Pixel (verified)",
+      "status": "detected"
+    },
+    {
+      "event": "purchase",
+      "platform": "Google Analytics 4",
+      "browser": true,
+      "serverSignal": false,
+      "transactionId": "ORD_10492",
+      "value": 149.99,
+      "currency": "USD",
+      "evidenceSummary": "Observed via GA4 measurement beacon/dataLayer",
+      "status": "verified"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue_missing_consent_mode_v2",
+      "title": "Upgrade to Google Consent Mode v2 Required",
+      "severity": "high",
+      "category": "Privacy & Compliance",
+      "finding": "Legacy Google Consent Mode is active, but lacks required v2 parameters (ad_user_data, ad_personalization).",
+      "impact": "Google Ads remarketing, audience building, and conversion modeling for EEA/EU users will be significantly degraded without Consent Mode v2.",
+      "recommendation": "Configure your CMP (OneTrust) to trigger Google Consent Mode v2 with default consent states before Google tags load.",
+      "evidence": [
+        {
+          "id": "ev_consent_1",
+          "type": "datalayer",
+          "description": "No ad_user_data or ad_personalization consent signals observed in GTM/dataLayer.",
+          "confidence": 0.85
+        }
+      ]
+    }
+  ],
+  "duplicates": [],
+  "serverSide": {
+    "status": "possible",
+    "confidence": 55,
+    "firstPartyEndpoints": [],
+    "customSubdomains": [],
+    "sgtmIndicators": [],
+    "stapeIndicators": [],
+    "eventDeduplicationObserved": true,
+    "disclaimer": "Browser-level scanning cannot fully verify private server/container configurations. Verifying server-side delivery requires authorized access to GTM Server Container, Stape, or Ad Platform Events Manager.",
+    "requirements": [
+      "GTM Server Container access",
+      "Cloud hosting / Stape platform access",
+      "Ad platform Events Manager access"
+    ]
+  },
+  "dataLayer": {
+    "exists": true,
+    "pushesCount": 12,
+    "events": ["page_view", "view_item", "add_to_cart", "purchase"],
+    "hasEcommerce": true,
+    "purchaseData": {
+      "hasPurchase": true,
+      "transaction_id": "ORD_10492",
+      "value": 149.99,
+      "currency": "USD",
+      "itemsCount": 2
+    },
+    "rawItems": []
+  },
+  "cookies": [
+    {
+      "name": "_fbp",
+      "value": "fb.1.1710000000.10492",
+      "domain": ".example-ecommerce-store.com",
+      "path": "/",
+      "secure": true,
+      "httpOnly": false,
+      "sameSite": "lax",
+      "category": "advertising"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.104928172.1710000000",
+      "domain": ".example-ecommerce-store.com",
+      "path": "/",
+      "secure": true,
+      "httpOnly": false,
+      "sameSite": "lax",
+      "category": "analytics"
+    }
+  ],
+  "attribution": {
+    "utms": {
+      "source": "meta",
+      "medium": "cpc"
+    },
+    "clickIds": {
+      "fbclid": "IwAR0sample_click_id"
+    },
+    "summary": [
+      "UTM Parameters detected (Source: meta, Medium: cpc)",
+      "Meta attribution signal (fbclid) detected."
+    ]
+  },
+  "technology": {
+    "cms": ["Shopify"],
+    "ecommerce": ["Shopify"],
+    "frameworks": ["Vanilla / Static"],
+    "tagManagers": ["Google Tag Manager"],
+    "analyticsTools": ["Google Analytics"],
+    "infrastructure": ["Cloudflare"]
+  },
+  "consent": {
+    "cmpDetected": "OneTrust",
+    "bannerObservable": true,
+    "consentModeV2": false,
+    "consentModeSignals": {
+      "ad_storage": "granted",
+      "analytics_storage": "granted"
+    },
+    "disclaimer": "Technical consent implementation detected. Legal/privacy compliance requires separate legal counsel review."
+  },
+  "stats": {
+    "platformsDetected": 4,
+    "eventsDetected": 4,
+    "criticalCount": 0,
+    "warningCount": 1
+  }
+}
