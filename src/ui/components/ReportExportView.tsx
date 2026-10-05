@@ -79,6 +79,20 @@ export const ReportExportView: React.FC<ReportExportViewProps> = ({ report, cons
           </div>
         </div>
 
+        {/* Branding Preview Banner */}
+        <div className="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-between text-xs">
+          <div className="flex items-center gap-2.5">
+            <img src="/icons/icon48.png" alt="Logo" className="w-7 h-7 rounded-md object-contain bg-white p-0.5 border border-slate-200" />
+            <div>
+              <span className="font-bold text-slate-800">Branded Export Header:</span>
+              <span className="text-slate-600 ml-1.5">{consultant.name} &bull; {consultant.title} ({consultant.company})</span>
+            </div>
+          </div>
+          <span className="text-emerald-700 font-semibold text-[11px] bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            Official Branding
+          </span>
+        </div>
+
         {/* Primary Export Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
           {/* PDF Card */}

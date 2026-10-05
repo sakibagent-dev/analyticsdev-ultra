@@ -90,14 +90,16 @@ export const PopupApp: React.FC = () => {
       {/* Header */}
       <header className="bg-slate-900 text-white p-4 border-b border-slate-800 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center font-extrabold text-slate-950 text-sm shadow">
-            AU
-          </div>
+          <img
+            src="/icons/icon48.png"
+            alt="AnalyticsDev Ultra Logo"
+            className="w-8 h-8 rounded-lg shadow-sm object-contain bg-white/10 p-0.5 border border-emerald-500/30"
+          />
           <div>
             <h1 className="font-extrabold text-sm tracking-tight text-white leading-none">
               AnalyticsDev Ultra
             </h1>
-            <span className="text-[10px] text-emerald-400 font-semibold">
+            <span className="text-[10px] text-emerald-400 font-semibold block mt-0.5">
               Conversion & Analytics Audit
             </span>
           </div>
@@ -220,6 +222,10 @@ export const PopupApp: React.FC = () => {
           </>
         )}
       </div>
+      {/* Footer */}
+      <footer className="px-3 py-2 bg-slate-900 border-t border-slate-800 text-center text-[10px] text-slate-400">
+        Created by <span className="text-emerald-400 font-semibold">Analytics Dev Founder Sakib Hossain</span>
+      </footer>
     </div>
   );
 };

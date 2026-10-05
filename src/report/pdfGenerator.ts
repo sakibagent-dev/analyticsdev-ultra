@@ -3,6 +3,7 @@ import autoTable from "jspdf-autotable";
 import { AuditReport } from "../types/audit";
 import { ConsultantProfile } from "../types/report";
 import { ReportModel } from "./reportModel";
+import { BRAND_ICON_128_BASE64 } from "../assets/brandLogo";
 
 export class PdfGenerator {
   public static generate(report: AuditReport, consultant: ConsultantProfile): jsPDF {
@@ -29,6 +30,13 @@ export class PdfGenerator {
     // Top banner
     doc.setFillColor(r, g, b);
     doc.rect(0, 0, pageWidth, 8, "F");
+
+    // Brand Logo Top-Right
+    try {
+      doc.addImage(BRAND_ICON_128_BASE64, "PNG", pageWidth - margin - 42, 26, 42, 42);
+    } catch {
+      // fallback if image driver fails in certain environments
+    }
 
     // Consultant Info Header
     doc.setFont("helvetica", "bold");

@@ -123,13 +123,20 @@ export const DashboardApp: React.FC = () => {
       <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center font-extrabold text-slate-950 text-base shadow-sm">
-              AU
-            </div>
+            <img
+              src="/icons/icon48.png"
+              alt="AnalyticsDev Ultra Logo"
+              className="w-9 h-9 rounded-lg shadow-sm object-contain bg-white/10 p-0.5 border border-emerald-500/30"
+            />
             <div>
-              <span className="font-extrabold text-base tracking-tight text-white">AnalyticsDev Ultra</span>
-              <span className="text-[11px] text-emerald-400 font-semibold ml-2 px-1.5 py-0.5 rounded bg-emerald-950 border border-emerald-800">
-                ULTRA AUDIT SUITE
+              <div className="flex items-center gap-2">
+                <span className="font-extrabold text-base tracking-tight text-white">AnalyticsDev Ultra</span>
+                <span className="text-[11px] text-emerald-400 font-semibold px-1.5 py-0.5 rounded bg-emerald-950 border border-emerald-800">
+                  ULTRA AUDIT SUITE
+                </span>
+              </div>
+              <span className="text-[11px] text-slate-400 block -mt-0.5">
+                Created by <strong className="text-emerald-400 font-semibold">Analytics Dev Founder Sakib Hossain</strong>
               </span>
             </div>
           </div>
@@ -455,6 +462,21 @@ export const DashboardApp: React.FC = () => {
           )}
         </main>
       </div>
+
+      {/* SaaS Footer */}
+      <footer className="mt-auto bg-slate-900 border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <img src="/icons/icon16.png" alt="Logo" className="w-4 h-4 object-contain" />
+            <span className="font-semibold text-white">AnalyticsDev Ultra</span>
+            <span className="text-slate-600">&bull;</span>
+            <span>Enterprise Tracking & Conversion Audit Platform</span>
+          </div>
+          <div>
+            Created with excellence by <span className="text-emerald-400 font-semibold">Analytics Dev Founder Sakib Hossain</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -1,6 +1,12 @@
-# AnalyticsDev Ultra — Production-Ready Chrome Extension
-> **Website Tracking, Analytics, Advertising & Conversion Audit Platform**
-> Built for digital marketers, tracking specialists, agencies, and analytics consultants.
+<p align="center">
+  <img src="public/icons/logo.png" alt="AnalyticsDev Ultra" width="160" />
+</p>
+
+<h1 align="center">AnalyticsDev Ultra</h1>
+<p align="center">
+  <strong>Enterprise Website Tracking, Analytics, Advertising & Conversion Audit Platform</strong><br>
+  <em>Created by Analytics Dev Founder Sakib Hossain</em>
+</p>
 
 ---
 
@@ -171,12 +177,14 @@ Test coverage includes:
 
 ---
 
-## 👤 Consultant Profile Settings
+## 👤 Founder & Consultant Profile Settings
 
-AnalyticsDev Ultra includes customizable white-label consultant branding for PDF and HTML reports:
-- **Default Consultant:** Sakib Hossain
-- **Default Title:** Digital Analytics & Conversion Tracking Specialist
-- **Default Company:** AnalyticsDev Ultra Advisory
+AnalyticsDev Ultra was created by **Sakib Hossain**, Founder of **Analytics Dev**.
+
+It includes customizable white-label consultant branding for PDF and HTML reports:
+- **Founder & Default Consultant:** Sakib Hossain
+- **Title:** Founder, Analytics Dev
+- **Company:** Analytics Dev
 - **Customizable:** Name, Company, Logo, Website, Email, Phone, Brand Color, and Legal Footer Notice.
 
 Editable in the **Settings** tab within the Dashboard, automatically stored in `chrome.storage.local`.
